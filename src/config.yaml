@@ -1,0 +1,32 @@
+site:
+  name: MK Masáže
+  site: 'https://mk-masaze.cz'
+  defaultPhone: '+420 123 456 789'
+  base: '/'
+  trailingSlash: true
+
+# Default SEO metadata
+metadata:
+  title:
+    default: MK Masáže
+    template: '%s — MK Masáže'
+  description: "MK Masáže nabízí profesionální masážní služby pro relaxaci a regeneraci. Naše nabídka zahrnuje klasické, sportovní, relaxační a další druhy masáží. Přijďte si odpočinout a načerpat novou energii."
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: MK Masáže
+    images:
+      - url: '~/assets/images/default-og-image.jpg'
+        width: 1200
+        height: 628
+    type: website
+  keywords: ["masáže", "relaxace", "regenerace", "zdraví", "wellness", "terapie"]
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null # or "G-XXXXXXXXXX"
+
+ui:
+  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
