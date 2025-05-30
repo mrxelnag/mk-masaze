@@ -20,15 +20,15 @@ Example:
 ```yaml
 site:
   name: MK Masáže
-  site: 'https://mk-masaze.cz'
-  defaultPhone: '+420 123 456 789'
-  base: '/'
+  site: "https://mk-masaze.cz"
+  defaultPhone: "+420 123 456 789"
+  base: "/"
   trailingSlash: true
 
 metadata:
   title:
     default: MK Masáže
-    template: '%s — MK Masáže'
+    template: "%s — MK Masáže"
   description: "MK Masáže nabízí profesionální masážní služby..."
   robots:
     index: true
@@ -36,7 +36,7 @@ metadata:
   openGraph:
     site_name: MK Masáže
     images:
-      - url: '~/assets/images/default-og-image.jpg'
+      - url: "~/assets/images/default-og-image.jpg"
         width: 1200
         height: 628
     type: website
@@ -48,7 +48,7 @@ analytics:
       id: null # or "G-XXXXXXXXXX"
 
 ui:
-  theme: 'system'
+  theme: "system"
 ```
 
 ### Page-Specific Metadata
@@ -57,7 +57,7 @@ Each page can override the default metadata by providing a `metadata` object:
 
 ```astro
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 import type { MetaData } from "~/types";
 
 const metadata: MetaData = {
@@ -66,8 +66,8 @@ const metadata: MetaData = {
   openGraph: {
     title: "Domů | MK Masáže",
     description: "Vítejte na stránkách MK Masáže...",
-    type: "website"
-  }
+    type: "website",
+  },
 };
 ---
 
@@ -98,9 +98,9 @@ To learn more about the folder structure of an Astro project, refer to [our guid
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `pnpm install`         | Installs dependencies                            |
 | `pnpm dev`             | Starts local dev server at `localhost:4321`      |
 | `pnpm build`           | Build your production site to `./dist/`          |
 | `pnpm preview`         | Preview your build locally, before deploying     |

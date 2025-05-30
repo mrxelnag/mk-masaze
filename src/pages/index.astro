@@ -1,27 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 import type { MetaData } from "~/types";
+import HeroSection from "~/components/ui/hero-section.astro";
 
 const metadata: MetaData = {
-  title: "Domů | Masáže",
+  title: "Masáže Mariia Kopecka",
+  ignoreTitleTemplate: true,
   description: "Vítejte na stránkách MK Masáže. Nabízíme profesionální masážní služby pro relaxaci a regeneraci.",
-  openGraph: {
-    title: "Domů | MK Masáže",
-    description: "Vítejte na stránkách MK Masáže. Nabízíme profesionální masážní služby pro relaxaci a regeneraci.",
-    type: "website"
-  }
 };
 ---
 
 <Layout metadata={metadata}>
-  <div class="max-w-6xl mx-auto p-8 text-center">
-    <h1 class="text-5xl mb-12">Vítejte na našich stránkách</h1>
+  <div slot="hero">
 
-    <div class="mt-12">
-      <h2 class="text-3xl mb-6">Prohlédněte si naše služby</h2>
-      <a href="/sluzby" class="inline-block px-6 py-3 bg-blue-600 text-white rounded text-xl hover:bg-blue-700 transition-colors">
-        Zobrazit služby
-      </a>
-    </div>
+  <HeroSection />
   </div>
 </Layout>

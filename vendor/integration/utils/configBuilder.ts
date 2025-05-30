@@ -1,6 +1,6 @@
-import merge from 'lodash.merge';
+import merge from "lodash.merge";
 
-import type { MetaData } from '~/types.d.ts';
+import type { MetaData } from "~/types.d.ts";
 
 export type Config = {
   site?: SiteConfig;
@@ -16,7 +16,7 @@ export interface SiteConfig {
   trailingSlash?: boolean;
   googleSiteVerificationId?: string;
 }
-export interface MetaDataConfig extends Omit<MetaData, 'title'> {
+export interface MetaDataConfig extends Omit<MetaData, "title"> {
   title?: {
     default: string;
     template: string;
@@ -36,16 +36,16 @@ export interface UIConfig {
   theme: string;
 }
 
-const DEFAULT_SITE_NAME = 'Website';
+const DEFAULT_SITE_NAME = "Website";
 
 const getSite = (config: Config) => {
   const _default = {
     name: DEFAULT_SITE_NAME,
     site: undefined,
-    base: '/',
+    base: "/",
     trailingSlash: false,
 
-    googleSiteVerificationId: '',
+    googleSiteVerificationId: "",
   };
 
   return merge({}, _default, config?.site ?? {}) as SiteConfig;
@@ -57,25 +57,24 @@ const getMetadata = (config: Config) => {
   const _default = {
     title: {
       default: siteConfig?.name || DEFAULT_SITE_NAME,
-      template: '%s',
+      template: "%s",
     },
-    description: '',
+    description: "",
     robots: {
       index: false,
       follow: false,
     },
     openGraph: {
-      type: 'website',
+      type: "website",
     },
   };
 
   return merge({}, _default, config?.metadata ?? {}) as MetaDataConfig;
 };
 
-
 const getUI = (config: Config) => {
   const _default = {
-    theme: 'system',
+    theme: "system",
   };
 
   return merge({}, _default, config?.ui ?? {});

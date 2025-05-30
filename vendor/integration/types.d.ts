@@ -1,5 +1,5 @@
-declare module 'jpconfig:config' {
-  import type { SiteConfig, MetaDataConfig, UIConfig, AnalyticsConfig } from './config';
+declare module "jpconfig:config" {
+  import type { SiteConfig, MetaDataConfig, UIConfig, AnalyticsConfig } from "./config";
 
   export const SITE: SiteConfig;
   export const METADATA: MetaDataConfig;

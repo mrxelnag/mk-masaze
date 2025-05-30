@@ -1,1 +1,66 @@
 @import "tailwindcss";
+
+/* Preline UI */
+@import "../../node_modules/preline/variants.css";
+
+@theme {
+  /* Fonts */
+  --font-display: "Playfair Display", "serif";
+  --font-body: "Montserrat", "sans-serif";
+
+  /* Primary Color Scheme */
+  --color-primary: #7a9e7e; /* Soft sage green background */
+  --color-primary-foreground: #ffffff; /* White text on primary */
+
+  /* Secondary Color Scheme */
+  --color-secondary: #f5f1e8; /* Warm cream background */
+  --color-secondary-foreground: #3a3a3a; /* Dark text on secondary */
+
+  /* Accent Color Schemes */
+  --color-accent: #c99e93; /* Muted terracotta background */
+  --color-accent-foreground: #ffffff; /* White text on accent */
+
+  /* Muted Color Scheme */
+  --color-muted: #ebe6df; /* Light beige background */
+  --color-muted-foreground: #6d6d6d; /* Medium gray text on muted */
+
+  /* Card Color Scheme */
+  --color-card: #ffffff; /* White card background */
+  --color-card-foreground: #3a3a3a; /* Dark text on card */
+
+  /* Background Color Scheme */
+  --color-background: #f9f7f4; /* Main page background */
+  --color-foreground: #3a3a3a; /* Main text color */
+
+  /* Destructive Color Scheme (for errors/warnings) */
+  --color-destructive: #e74c3c; /* Red background */
+  --color-destructive-foreground: #ffffff; /* White text on destructive */
+
+  /* Border Colors */
+  --color-border: #e0dad0; /* Soft beige border */
+  --color-input: #e0dad0; /* Input border color */
+  --color-ring: #7a9e7e; /* Focus ring color */
+
+  /* Spacing Variables */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
+
+  /* Border Radius */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-quick: 150ms ease;
+  --transition-default: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* Box Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.08);
+}

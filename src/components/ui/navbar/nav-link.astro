@@ -1,0 +1,47 @@
+---
+// Destructure the properties from Astro.props
+
+import { getPermalink } from "../../../utils/permalinks";
+const { url, name } = Astro.props;
+
+// Define TypeScript interface for the properties
+interface Props {
+  url: string;
+  name: string;
+}
+---
+
+<a
+  id={url === "/" ? "home" : url.replace("/", "")}
+  href={getPermalink(url, "page")}
+  data-astro-prefetch
+  class="rounded-lg text-base font-medium text-primary outline-hidden ring-accent focus-visible:ring-3 md:py-3 md:text-sm 2xl:text-base"
+>
+  {name}
+</a>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let url = window.location.pathname;
+    let navId;
+
+    if (url === "/") {
+      navId = "home";
+    } else {
+      navId = url.replace("/", "");
+    }
+
+    let nav = document.getElementById(navId);
+
+    if (nav) {
+      nav.classList.remove(
+        "text-neutral-600",
+        "dark:text-neutral-400",
+        "hover:text-neutral-500",
+        "dark:hover:text-neutral-500"
+      );
+      nav.classList.add("text-orange-400", "dark:text-orange-300");
+      nav.setAttribute("aria-current", "page");
+    }
+  });
+</script>

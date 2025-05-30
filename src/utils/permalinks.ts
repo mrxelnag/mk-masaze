@@ -21,7 +21,6 @@ export const cleanSlug = (text = "") =>
     .map((slug) => slugify(slug))
     .join("/");
 
-
 /** */
 export const getCanonical = (path = ""): string | URL => {
   const url = String(new URL(path, SITE.site));

@@ -23,7 +23,7 @@ export const fetchLocalImages = async () => {
 
 /** */
 export const findImage = async (
-  imagePath?: string | ImageMetadata | null,
+  imagePath?: string | ImageMetadata | null
 ): Promise<string | ImageMetadata | undefined | null> => {
   // Not string
   if (typeof imagePath !== "string") {
@@ -51,7 +51,7 @@ export const findImage = async (
 /** */
 export const adaptOpenGraphImages = async (
   openGraph: OpenGraph = {},
-  astroSite: URL | undefined = new URL(""),
+  astroSite: URL | undefined = new URL("")
 ): Promise<OpenGraph> => {
   if (!openGraph?.images?.length) {
     return openGraph;
@@ -102,7 +102,7 @@ export const adaptOpenGraphImages = async (
       return {
         url: "",
       };
-    }),
+    })
   );
 
   return { ...openGraph, ...(adaptedImages ? { images: adaptedImages } : {}) };

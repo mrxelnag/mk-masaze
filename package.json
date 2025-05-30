@@ -12,11 +12,16 @@
     "@astrolib/seo": "1.0.0-beta.8",
     "@tailwindcss/vite": "^4.1.7",
     "astro": "^5.8.0",
+    "astro-icon": "^1.1.5",
     "js-yaml": "^4.1.0",
     "limax": "^4.1.0",
     "lodash.merge": "^4.6.2",
-    "prettier-plugin-astro": "^0.14.1",
+    "preline": "^3.0.1",
     "tailwindcss": "^4.1.7",
     "unpic": "^4.1.2"
+  },
+  "devDependencies": {
+    "prettier": "3.5.3",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

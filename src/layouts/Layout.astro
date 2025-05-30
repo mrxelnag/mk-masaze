@@ -3,6 +3,7 @@ import "../styles/global.css";
 import CommonMeta from "~/components/common/CommonMeta.astro";
 import Metadata from "~/components/common/Metadata.astro";
 import type { MetaData } from "~/types";
+import Navbar from "../components/ui/navbar/navbar.astro";
 
 export interface Props {
   metadata?: MetaData;
@@ -10,13 +11,37 @@ export interface Props {
 
 const { metadata = {} } = Astro.props;
 ---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<CommonMeta />
-		<Metadata {...metadata} />
-	</head>
-	<body class="antialiased text-default bg-page tracking-tight">
-		<slot />
-	</body>
+<html lang="en" class="scrollbar-hide scroll-pt-16">
+  <head>
+    <CommonMeta />
+    <Metadata {...metadata} />
+  </head>
+  <body class="antialiased text-foreground bg-background tracking-tight">
+    <!-- Full-width slot for headers (no padding, no max-width) -->
+
+    <Navbar />
+    <slot name="hero" />
+
+    <!-- Content area with padding and max-width -->
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <slot />
+    </div>
+
+    <script>
+      import "preline/preline.js";
+    </script>
+    <style>
+      /* CSS rules for the page scrollbar */
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </body>
 </html>
