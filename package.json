@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@astrolib/seo": "1.0.0-beta.8",
+    "@fontsource-variable/josefin-sans": "^5.2.5",
+    "@fontsource-variable/montserrat": "^5.2.5",
+    "@iconify-json/material-symbols-light": "^1.2.23",
     "@tailwindcss/vite": "^4.1.7",
     "astro": "^5.8.0",
     "astro-icon": "^1.1.5",

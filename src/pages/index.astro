@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import type { MetaData } from "~/types";
 import HeroSection from "~/components/ui/hero-section.astro";
+import Perks from "../components/ui/perks.astro";
 
 const metadata: MetaData = {
   title: "Masáže Mariia Kopecka",
@@ -14,5 +15,6 @@ const metadata: MetaData = {
   <div slot="hero">
 
   <HeroSection />
+    <Perks/>
   </div>
 </Layout>

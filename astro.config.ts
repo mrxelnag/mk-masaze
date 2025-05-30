@@ -24,6 +24,10 @@ export default defineConfig({
     jpconfig({
       config: "./src/config.yaml",
     }),
-    icon(),
+    icon({
+      include: {
+        "material-symbols-light": ["*"]
+      }
+    }),
   ],
 });

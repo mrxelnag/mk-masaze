@@ -4,6 +4,11 @@ import CommonMeta from "~/components/common/CommonMeta.astro";
 import Metadata from "~/components/common/Metadata.astro";
 import type { MetaData } from "~/types";
 import Navbar from "../components/ui/navbar/navbar.astro";
+// Supports weights 100-900
+import '@fontsource-variable/montserrat';
+// Supports weights 100-700
+import '@fontsource-variable/josefin-sans';
+
 
 export interface Props {
   metadata?: MetaData;
@@ -13,7 +18,7 @@ const { metadata = {} } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="scrollbar-hide scroll-pt-16">
+<html lang="cs" class="scrollbar-hide scroll-pt-16">
   <head>
     <CommonMeta />
     <Metadata {...metadata} />
