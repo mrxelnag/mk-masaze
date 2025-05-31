@@ -6,6 +6,7 @@ import Perks from "../components/sections/perks.astro";
 import FavMassages from "../components/sections/fav-massages.astro";
 import Section from "../components/ui/section.astro";
 import FavCosmetics from "~/components/sections/fav-cosmetics.astro";
+import Contact from "~/components/sections/contact.astro";
 
 const metadata: MetaData = {
   title: "Masáže Mariia Kopecka",
@@ -33,16 +34,16 @@ const metadata: MetaData = {
   <Section id="perks" borders={{
     flip: true,
     variant: "primary",
-  }} title="Oblíbená kosmetika">
+  }} title="Oblíbená kosmetika" disableBorders>
 
     <FavCosmetics/>
   </Section>
-  <Section id="perks" borders={{
+  <Section id="contact" borders={{
     flip: false,
     variant: "background",
-  }} title="Kontakt">
+  }} title="Kontakt" disableBorders>
 
-    <Perks />
+    <Contact />
   </Section>
 
 </Layout>

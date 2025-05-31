@@ -4,6 +4,7 @@ import CommonMeta from "~/components/common/CommonMeta.astro";
 import Metadata from "~/components/common/Metadata.astro";
 import type { MetaData } from "~/types";
 import Navbar from "../components/ui/navbar/navbar.astro";
+import Footer from "../components/ui/footer.astro";
 // Supports weights 100-900
 import '@fontsource-variable/montserrat';
 // Supports weights 100-700
@@ -26,6 +27,7 @@ const { metadata = {} } = Astro.props;
   <body class="antialiased text-foreground bg-background tracking-tight">
     <Navbar />
       <slot />
+    <Footer />
 
     <script>
       import "preline/preline.js";

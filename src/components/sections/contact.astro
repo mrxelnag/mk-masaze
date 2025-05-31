@@ -1,0 +1,36 @@
+---
+import { Icon } from "astro-icon/components";
+import MapWrapper from "../ui/map/map-wrapper.astro";
+---
+
+<div class="px-4 py-10 mx-auto">
+  <div class="grid md:grid-cols-2 gap-12">
+    <!-- Contact Information -->
+    <div class="space-y-6">
+      <div class="space-y-2">
+        <h3 class="text-2xl font-semibold text-text">KONTAKTNÍ ÚDAJE</h3>
+        <p class="text-lg font-medium">Maria Kopecká</p>
+        <div class="flex items-start space-x-2">
+          <Icon name="material-symbols-light:map" class="text-primary mt-1 flex-shrink-0" />
+          <p>Adresa: Perná 285, 691 86, Perná</p>
+        </div>
+        <div class="flex items-center space-x-2">
+          <Icon name="material-symbols-light:call" class="text-primary flex-shrink-0" />
+          <p>Tel.č.: <a href="tel:704317592" class="hover:text-primary">704 317 592</a></p>
+        </div>
+        <div class="flex items-center space-x-2">
+          <Icon name="material-symbols-light:mail" class="text-primary flex-shrink-0" />
+          <p>Email: <a href="mailto:mariia.kopecka@gmail.com" class="hover:text-primary">mariia.kopecka@gmail.com</a></p>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <h3 class="text-2xl font-semibold text-text">PROVOZNÍ DOBA</h3>
+        <p>PO-PÁ dle domluvy</p>
+      </div>
+    </div>
+
+    <!-- Google Map Placeholder -->
+      <MapWrapper/>
+  </div>
+</div>

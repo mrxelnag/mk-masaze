@@ -9,7 +9,7 @@ site:
 metadata:
   title:
     default: MK Masáže
-    template: "%s — MK Masáže & Kosmetika"
+    template: "%s | MK Masáže & Kosmetika"
   description: "MK Masáže nabízí profesionální masážní služby pro relaxaci a regeneraci. Naše nabídka zahrnuje klasické, sportovní, relaxační a další druhy masáží. Přijďte si odpočinout a načerpat novou energii."
   robots:
     index: true
