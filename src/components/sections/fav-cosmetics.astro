@@ -1,0 +1,43 @@
+---
+import { cosmeticServices } from "~/masaze-kosmetika-data.js";
+import { Icon } from "astro-icon/components";
+import { getPermalink } from "../../utils/permalinks";
+import Massage from "../ui/massage.astro";
+import Cosmetic from "../ui/cosmetic.astro";
+
+// Get only cosmetic services and filter favorites
+const favoriteCosmetics = cosmeticServices.filter(service => service.fav === true);
+---
+
+<!-- Icon Blocks -->
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-6">
+    {favoriteCosmetics.map((service) => (
+      <Cosmetic cosmetic={service} />
+    ))}
+  </div>
+  <div class="px-4 py-10 mx-auto">
+    <div class="flex justify-center mt-8">
+      <a
+        href={getPermalink("masaze-kosmetika#kosmetika")}
+        class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-primary hover:bg-primary/90 rounded-lg transition-colors"
+      >
+        Zobrazit další  <svg
+        class="shrink-0 size-4"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="m9 18 6-6-6-6"></path>
+      </svg>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- End Icon Blocks -->

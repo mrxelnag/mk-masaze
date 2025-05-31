@@ -1,0 +1,42 @@
+---
+import SectionBorders from "./decorations/section-borders.astro";
+import SectionTitle from "~/components/ui/section-title.astro";
+
+interface Props {
+  id: string;
+  title?: string;
+  description?: string
+  disableBorders?: boolean
+  borders?: {
+    flip: boolean;
+    variant: "primary" | "background";
+  };
+}
+
+const {
+  id, borders = {
+    flip: false,
+    variant: "background",
+  }, title, description, disableBorders
+} = Astro.props;
+
+const classes = borders.variant === "background" && !disableBorders ? "bg-primary/10" : "bg-background";
+---
+
+<section id={id} class={classes}>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    {title && (
+
+      <SectionTitle
+        description={description}
+        title={title}
+      />
+    )}
+
+    <slot />
+  </div>
+  {!disableBorders && (
+
+  <SectionBorders flip={borders.flip} variant={borders.variant} />
+  )}
+</section>

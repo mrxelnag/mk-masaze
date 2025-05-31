@@ -8,11 +8,11 @@ interface Props {
 const { flip = false, variant = "background" } = Astro.props;
 
 const classes = flip ?
-  variant === "primary" ? "bg-primary/30 fill-background rotate-180" : "bg-background fill-primary/30 rotate-180" :
-  variant === "primary" ? "fill-primary/30" : "fill-background";
+  variant === "primary" ? "bg-primary/10 fill-background rotate-180" : "bg-background fill-primary/10 rotate-180" :
+  variant === "primary" ? "fill-primary/10" : "fill-background";
 ---
-<div class="relative z-50">
-  <svg xmlns="http://www.w3.org/2000/svg" class={`w-full h-[30px] ${classes}`} viewBox="0 0 1680 50"
+<div class="relative z-20">
+  <svg xmlns="http://www.w3.org/2000/svg" class={`w-full h-[70px] ${classes}`} viewBox="0 0 1680 50"
        preserveAspectRatio="none" fill="none">
     <path fill-rule="evenodd" clip-rule="evenodd"
           d="M765 0H0v50h1680V0H915c-52.637 0-67.41 14.543-73.841 20.873-.419.413-.803.79-1.159 1.127-.356-.337-.74-.714-1.159-1.127C832.41 14.543 817.637 0 765 0z" />

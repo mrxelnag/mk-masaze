@@ -1,0 +1,36 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import type { MetaData } from "~/types";
+import AllMassages from "~/components/sections/all-massages.astro";
+import AllCosmetics from "~/components/sections/all-cosmetics.astro";
+import Section from "~/components/ui/section.astro";
+
+const metadata: MetaData = {
+  title: "Masáže Kosmetika | Mariia Kopecka",
+  ignoreTitleTemplate: true,
+  description: "Kompletní nabídka masáží a kosmetických služeb od Mariia Kopecka. Profesionální péče pro vaše tělo a mysl.",
+};
+---
+
+<Layout metadata={metadata}>
+  <div class="pt-8 md:pt-12 lg:pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+          Masáže Kosmetika
+        </h1>
+        <p class="text-xl text-muted-foreground">
+          Kompletní nabídka našich masáží pro vaše tělo a mysl.
+        </p>
+      </div>
+    </div>
+  </div>
+
+<Section id="masaze" disableBorders title="Masáže">
+  <AllMassages />
+</Section>
+  <Section id="kosmetika" disableBorders title="Kosmetika">
+    <AllCosmetics/>
+  </Section>
+
+</Layout>

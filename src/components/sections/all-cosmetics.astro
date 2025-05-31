@@ -1,0 +1,18 @@
+---
+import { cosmeticServices } from "~/masaze-kosmetika-data.js";
+import { getPermalink } from "../../utils/permalinks";
+import Massage from "~/components/ui/massage.astro";
+import Cosmetic from "../ui/cosmetic.astro";
+
+// Use all massage services without filtering
+---
+
+<!-- All Massages Section -->
+<div class="px-4 py-10 mx-auto">
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+    {cosmeticServices.map(cosmetic => (
+    <Cosmetic cosmetic={cosmetic}/>
+    ))}
+  </div>
+</div>
+<!-- End All Massages Section -->

@@ -1,0 +1,47 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import MassageService from "~/components/MassageService.astro";
+import { allServices } from "~/masaze-kosmetika-data.js";
+import { getPermalink } from "~/utils/permalinks";
+import type { MetaData } from "~/types";
+import Section from "../../components/ui/section.astro";
+
+// This function is required for static site generation with dynamic routes
+export function getStaticPaths() {
+  // Combine all services from the new structure
+  const allServicesList = [
+    ...allServices.massage,
+    ...allServices.cosmetic,
+    ...allServices.additional,
+  ];
+
+  return allServicesList.map((service) => ({
+    params: { id: service.id },
+    props: { service },
+  }));
+}
+
+// Get the service from props
+const { service } = Astro.props;
+
+// Create metadata object for Layout
+const metadata: MetaData = {
+  title: `${service.title} | Masáže`,
+  description: service.description,
+};
+---
+
+<Layout metadata={metadata}>
+  <Section id={service.id} disableBorders>
+    <MassageService
+      {...service}
+    />
+
+    <div class="max-w-6xl mx-auto px-8 my-8">
+      <a href={getPermalink("/masaze-kosmetika")}
+         class="inline-block mt-8 text-gray-700 font-medium hover:text-blue-600 transition-colors"
+      >← Zpět na přehled služeb</a
+      >
+    </div>
+  </Section>
+</Layout>

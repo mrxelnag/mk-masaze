@@ -24,15 +24,8 @@ const { metadata = {} } = Astro.props;
     <Metadata {...metadata} />
   </head>
   <body class="antialiased text-foreground bg-background tracking-tight">
-    <!-- Full-width slot for headers (no padding, no max-width) -->
-
     <Navbar />
-    <slot name="hero" />
-
-    <!-- Content area with padding and max-width -->
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <slot />
-    </div>
 
     <script>
       import "preline/preline.js";

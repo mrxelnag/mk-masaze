@@ -1,8 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import type { MetaData } from "~/types";
-import HeroSection from "~/components/ui/hero-section.astro";
-import Perks from "../components/ui/perks.astro";
+import HeroSection from "~/components/sections/hero-section.astro";
+import Perks from "../components/sections/perks.astro";
+import FavMassages from "../components/sections/fav-massages.astro";
+import Section from "../components/ui/section.astro";
+import FavCosmetics from "~/components/sections/fav-cosmetics.astro";
 
 const metadata: MetaData = {
   title: "Masáže Mariia Kopecka",
@@ -12,10 +15,34 @@ const metadata: MetaData = {
 ---
 
 <Layout metadata={metadata}>
-  <div slot="hero">
+  <HeroSection />
+  <Section id="perks" borders={{
+    flip: true,
+    variant: "primary",
+  }}>
 
-    <HeroSection />
     <Perks />
-    <div class="bg-primary/30 h-40"></div>
-  </div>
+  </Section>
+  <Section id="favorite-massages" borders={{
+    flip: false,
+    variant: "background",
+  }} title="Oblíbené masáže">
+
+    <FavMassages />
+  </Section>
+  <Section id="perks" borders={{
+    flip: true,
+    variant: "primary",
+  }} title="Oblíbená kosmetika">
+
+    <FavCosmetics/>
+  </Section>
+  <Section id="perks" borders={{
+    flip: false,
+    variant: "background",
+  }} title="Kontakt">
+
+    <Perks />
+  </Section>
+
 </Layout>
