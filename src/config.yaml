@@ -3,7 +3,7 @@ site:
   site: "https://mk-masaze.cz"
   defaultPhone: "+420 123 456 789"
   base: "/"
-  trailingSlash: true
+  trailingSlash: false
 
 # Default SEO metadata
 metadata:

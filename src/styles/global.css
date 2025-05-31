@@ -14,8 +14,8 @@ h1, h2, h3, h4, h5, h6 {
 @theme {
 
     /* Primary Color Scheme */
-    --color-primary: #7a9e7e; /* Soft sage green background */
-    --color-primary-dark: #6d8d74; /* Dark green background */
+    --color-primary: #1F7F74; /* Soft sage green background */
+    --color-primary-dark: #49A69C; /* Dark green background */
     --color-primary-foreground: #ffffff; /* White text on primary */
     /* Secondary Color Scheme */
     --color-secondary: #f5f1e8; /* Warm cream background */

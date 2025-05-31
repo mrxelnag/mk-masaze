@@ -25,6 +25,7 @@ export default defineConfig({
       config: "./src/config.yaml",
     }),
     icon({
+      iconDir: "src/assets/icons",
       include: {
         "material-symbols-light": ["*"]
       }
