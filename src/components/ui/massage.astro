@@ -28,7 +28,7 @@ const { massage } = Astro.props;
   <a href={getPermalink(`/masaze-kosmetika/${massage.id}`)}>
     <div class="relative h-48 overflow-hidden group">
       <Image
-        src={getPermalink(massage.image, "asset")}
+        src={massage.image}
         alt={massage.title}
         class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
       />
