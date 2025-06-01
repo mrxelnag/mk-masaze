@@ -10,5 +10,5 @@ const { title, description, center = true } = Astro.props;
 
 <div class={`pt-8 pb-4 ${center ? "text-center" : ""}`}>
   <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>
-  {description && <p class="mt-4 text-xl text-muted-foreground">{description}</p>}
+  {description && <p class="mt-4 text-xl max-w-[600px] text-center mx-auto text-muted-foreground">{description}</p>}
 </div>

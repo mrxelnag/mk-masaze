@@ -3,6 +3,7 @@ import Layout from "~/layouts/Layout.astro";
 import type { MetaData } from "~/types";
 import AllMassages from "~/components/sections/all-massages.astro";
 import AllCosmetics from "~/components/sections/all-cosmetics.astro";
+import AdditionalServices from "~/components/sections/additional-services.astro";
 import Section from "~/components/ui/section.astro";
 
 const metadata: MetaData = {
@@ -30,6 +31,10 @@ const metadata: MetaData = {
 </Section>
   <Section id="kosmetika" disableBorders title="Kosmetika">
     <AllCosmetics/>
+  </Section>
+
+  <Section id="doplnkove-sluzby" disableBorders title="Doplňkové služby">
+    <AdditionalServices/>
   </Section>
 
 </Layout>

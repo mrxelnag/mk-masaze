@@ -7,7 +7,7 @@ export const massageServices = [
     description:
       "Klasická masáž, někdy označována také jako švédská masáž, je výborný způsob jak uvolnit nejen ztuhlé svalstvo, ale také mysl. Patří proto mezi nejoblíbenější a nejžádanější procedury.",
     icon: "",
-    image: "~/assets/images/bg-hero.jpeg",
+    image: "~/assets/images/masaze/klasicka-masaz.webp",
     pricing: [
       {
         price: "800 Kč",
@@ -37,7 +37,7 @@ export const massageServices = [
     description:
       "Masáž lávovými kameny je hluboce relaxační procedura, která využívá horké kameny k uvolnění svalového napětí, podpoře prokrvení a celkové harmonizaci těla i mysli.",
     icon: "",
-    image: "~/assets/images/masaz-lavove-kameny.svg",
+    image: "~/assets/images/masaze/masaz-lavovymi-kameny.webp",
     pricing: [
       {
         price: "800 Kč",
@@ -66,7 +66,7 @@ export const massageServices = [
     description:
       "Principem masáže baňkami je metoda baňkování a její využití jako masážní techniky. Tato reflexní metoda je založena na překrvení, které se vytvoří po přiložení baňky.",
     icon: "",
-    image: "~/assets/images/masaz-bankami.svg",
+    image: "~/assets/images/masaze/masaz-bankami.webp",
     pricing: [
       {
         price: "800 Kč",
@@ -96,7 +96,7 @@ export const massageServices = [
     description:
       "Maderoterapie je přírodní masážní metoda, která pomáhá formovat tělo, zrychluje metabolismus a podporuje odplavování toxinů.",
     icon: "",
-    image: "~/assets/images/maderoterapie.svg",
+    image: "~/assets/images/masaze/maderoterapie.webp",
     pricing: [
       {
         price: "1500 Kč",
@@ -124,7 +124,7 @@ export const massageServices = [
     description:
       "Relaxační masáž celého těla je typ masáže, který se zaměřuje na uvolnění svalů, zlepšení krevního oběhu a celkovou relaxaci.",
     icon: "",
-    image: "~/assets/images/relaxacni-masaz.svg",
+    image: "~/assets/images/masaze/relaxacni-masaz.webp",
     pricing: [
       {
         price: "1200 Kč",
@@ -151,7 +151,7 @@ export const massageServices = [
     description:
       "Lymfatická masáž, lépe řečeno lymfatická drenáž je velmi jemná masážní technika, kterou můžeme zařadit mezi detoxikační terapie.",
     icon: "",
-    image: "~/assets/images/lymfaticka-masaz.svg",
+    image: "~/assets/images/masaze/lymfaticka-masaz.webp",
     pricing: [
       {
         price: "1500 Kč",
@@ -179,7 +179,7 @@ export const massageServices = [
     description:
       "Arosha zábaly jsou specifická tělová ošetření, která se používají k dosažení zeštíhlení, zpevnění a vyhlazení pleti.",
     icon: "",
-    image: "~/assets/images/arosha-zabaly.svg",
+    image: "~/assets/images/masaze/arosha-zabaly.webp",
     pricing: [
       {
         price: "1500 Kč",
@@ -210,8 +210,7 @@ export const cosmeticServices = [
     title: "Základní ošetření pleti",
     description:
       "Zaměřuje se na hloubkové čištění, hydrataci a vyživení pleti, a to dle konkrétního typu a potřeb pleti.",
-    icon: "",
-    // image: "~/assets/images/zakladni-osetreni.svg",
+    icon: "material-symbols-light:massage-outline",
     pricing: [
       {
         price: "1200 Kč",
@@ -230,8 +229,8 @@ export const cosmeticServices = [
     title: "Kosmetické ošetření na míru",
     description:
       "Sama vám doporučím a vyberu typ kosmetického ošetření podle potřeb vaší pleti. Péče zaměřená na vrásky, akné, pigmentové skvrny, hydrataci, rozjasnění.",
-    icon: "",
-    // image: "~/assets/images/osetreni-na-miru.svg",
+    icon: "material-symbols-light:clean-hands-outline",
+    // image: "~/assets/images/masaze/osetreni-na-miru.webp",
     pricing: [
       {
         price: "1800 Kč",
@@ -239,7 +238,6 @@ export const cosmeticServices = [
       },
     ],
     benefits: [
-      "Individuální přístup",
       "Péče o vrásky",
       "Ošetření akné",
       "Redukce pigmentových skvrn",
@@ -257,8 +255,8 @@ export const cosmeticServices = [
     title: "Hydratační ošetření pleti",
     description:
       "Revoluční kosmetická péče za použití španělské kosmetiky Germaine de Capuccini pro šťavnatou, hydratovanou a viditelně plnější pleť.",
-    icon: "",
-    // image: "~/assets/images/hydratacni-osetreni.svg",
+    icon: "material-symbols-light:water-drop-outline",
+    // image: "~/assets/images/masaze/hydratacni-osetreni.webp",
     pricing: [
       {
         price: "1800 Kč",
@@ -284,8 +282,8 @@ export const cosmeticServices = [
     title: "Omlazující péče (MCCM)",
     description:
       "Ošetření pleti za pomoci profesionální kosmetiky Mesosystem, vyráběná firmou MCCM, jejichž přípravky přináší okamžité viditelné účinky na pleť.",
-    icon: "",
-    // image: "~/assets/images/omlazujici-pece.svg",
+    icon: "material-symbols-light:avg-time-outline-rounded",
+    // image: "~/assets/images/masaze/omlazujici-pece.webp",
     pricing: [
       {
         price: "1800 Kč",
@@ -311,8 +309,8 @@ export const cosmeticServices = [
     title: "Mezoterapie (MCCM)",
     description:
       "Metoda omlazení pleti, při které se pomocí jemných jehliček (Dermapen) vpravují do pokožky účinné látky.",
-    icon: "",
-    // image: "~/assets/images/mezoterapie.svg",
+    icon: "material-symbols-light:cleaning-bucket-outline",
+    // image: "~/assets/images/masaze/mezoterapie.webp",
     pricing: [
       {
         price: "3700 Kč",
@@ -343,8 +341,7 @@ export const additionalServices = [
     fav: false,
     title: "Barvení řas a obočí",
     description: "Profesionální barvení řas a obočí pro zvýraznění vašeho pohledu.",
-    icon: "",
-    // image: "~/assets/images/barveni-ras-oboci.svg",
+    // image: "~/assets/images/masaze/barveni-ras-oboci.webp",
     pricing: [
       {
         price: "350 Kč",
@@ -366,8 +363,7 @@ export const additionalServices = [
     fav: false,
     title: "Laminace řas a obočí",
     description: "Laminace pro krásně tvarované a upravené řasy a obočí.",
-    icon: "",
-    // image: "~/assets/images/laminace-ras-oboci.svg",
+    // image: "~/assets/images/masaze/laminace-ras-oboci.webp",
     pricing: [
       {
         price: "450 Kč",

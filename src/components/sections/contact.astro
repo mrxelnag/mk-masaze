@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import MapWrapper from "../ui/map/map-wrapper.astro";
+import { SITE } from "jpconfig:config";
 ---
 
 <div class="px-4 py-10 mx-auto">
@@ -23,6 +24,9 @@ import MapWrapper from "../ui/map/map-wrapper.astro";
           <p>Email: <a href="mailto:mariia.kopecka@gmail.com" class="hover:text-primary">mariia.kopecka@gmail.com</a></p>
         </div>
       </div>
+        <a class="group inline-flex max-w-24 items-center gap-x-2 py-2 px-3 bg-primary font-medium text-sm text-primary-foreground rounded-tl-xl rounded-br-xl focus:outline-hidden" href={SITE.reservation}>
+          Rezervace
+        </a>
 
       <div class="space-y-2">
         <h3 class="text-2xl font-semibold text-text">PROVOZNÍ DOBA</h3>

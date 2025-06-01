@@ -1,0 +1,18 @@
+---
+import { additionalServices } from "~/masaze-kosmetika-data.js";
+import { getPermalink } from "../../utils/permalinks";
+import AdditionalService from "../ui/additional-service.astro";
+
+// Get all additional services
+const allAdditionalServices = additionalServices;
+---
+
+<!-- Additional Services Section -->
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <div class="grid sm:grid-cols-2 items-center gap-6">
+    {allAdditionalServices.map((service) => (
+      <AdditionalService service={service} />
+    ))}
+  </div>
+</div>
+<!-- End Additional Services Section -->
