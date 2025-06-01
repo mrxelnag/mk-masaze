@@ -2,6 +2,7 @@
 import SectionBorders from "~/components/ui/decorations/section-borders.astro";
 import Image from "~/components/Image.astro";
 import Section from "../ui/section.astro";
+import { getPermalink } from "../../utils/permalinks";
 ---
 <!-- Hero -->
 <!-- Gradients -->
@@ -15,7 +16,7 @@ import Section from "../ui/section.astro";
           sizes="100vw"
           loading="eager"
           src={"~/assets/images/bg-hero.jpeg"}
-          alt={"Landing Page Obrázek"}
+          alt={"Landing Page "}
         />
         <!-- Dark overlay -->
         <div class="absolute inset-0 bg-black/50"></div>

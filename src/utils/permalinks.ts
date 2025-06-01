@@ -82,7 +82,20 @@ export const getAsset = (path: string): string =>
     .join("/");
 
 /** */
-const definitivePermalink = (permalink: string): string => createPath(BASE_PATHNAME, permalink);
+const definitivePermalink = (permalink: string): string => {
+  // Extract hash fragment if present
+  let hash = '';
+  let path = permalink;
+
+  if (permalink.includes('#')) {
+    const parts = permalink.split('#');
+    path = parts[0];
+    hash = '#' + parts[1];
+  }
+
+  // Create the path without the hash, then add the hash back
+  return createPath(BASE_PATHNAME, path) + hash;
+};
 
 /** */
 export const applyGetPermalinks = (menu: object = {}) => {

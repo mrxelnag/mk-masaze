@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import SectionBorders from "~/components/ui/decorations/section-borders.astro";
+import { getPermalink } from "../../utils/permalinks";
 ---
 
 <!-- Icon Blocks -->
@@ -34,7 +35,7 @@ import SectionBorders from "~/components/ui/decorations/section-borders.astro";
       <div class="mt-5">
         <h3 class="text-2xl font-semibold text-text ">Kosmetika</h3>
         <p class="mt-1 text-muted-foreground">Kompletní kosmetické služby pro vaši krásu a pohodu</p>
-        <a href="/masaze-kosmetika"
+        <a href={getPermalink("/masaze-kosmetika")}
            class="inline-block mt-4 px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm">
           Více o kosmetice
         </a>
@@ -51,7 +52,7 @@ import SectionBorders from "~/components/ui/decorations/section-borders.astro";
       <div class="mt-5">
         <h3 class="text-2xl font-semibold text-text ">Rezervace</h3>
         <p class="mt-1 text-muted-foreground">Kompletní kosmetické služby pro vaši krásu a pohodu</p>
-        <a href="/masaze-kosmetika"
+        <a href={getPermalink("/masaze-kosmetika")}
            class="inline-block mt-4 px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm">
           Rezervace
         </a>
