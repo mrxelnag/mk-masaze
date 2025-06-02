@@ -45,8 +45,8 @@ const { massage } = Astro.props;
         {massage.pricing.length > 1 && "od: "} {massage.pricing[0].price} / {massage.pricing[0].duration}
       </p>
       <a
-        href={`/masaze-kosmetika/${massage.id}`}
-        class="inline-block mt-auto text-primary hover:text-primary/70 transition-colors text-sm font-medium"
+        href={getPermalink(`/masaze-kosmetika/${massage.id}`)}
+        class="inline-block mt-auto text-primary hover:text-primary/70 transition-colors mt-2 text-sm font-medium"
       >
         Více informací →
       </a>

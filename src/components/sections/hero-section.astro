@@ -11,13 +11,15 @@ import Section from "../ui/section.astro";
     <div aria-hidden="true" class="absolute inset-0 -top-96 w-full overflow-hidden">
       <div class="bg-primary/10 w-full h-full relative">
         <Image
-          class="w-full h-full object-contain"
-          widths={[400, 768, 1024, 2040]}
+          class="w-full h-full object-cover"
+          widths={[400, 768, 1024, 1920]}
           sizes="100vw"
           loading="eager"
+          fetchpriority="high"
           src={"~/assets/images/bg-hero.webp"}
-          alt={"Landing Page Obrázek"}
+          alt={"Landing Page Background"}
         />
+
         <!-- Dark overlay -->
         <div class="absolute inset-0 bg-black/50"></div>
       </div>

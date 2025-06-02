@@ -15,6 +15,7 @@
     "@iconify-json/material-symbols-light": "^1.2.23",
     "@tailwindcss/vite": "^4.1.7",
     "astro": "^5.8.0",
+    "astro-compress": "^2.3.8",
     "astro-icon": "^1.1.5",
     "js-yaml": "^4.1.0",
     "limax": "^4.1.0",

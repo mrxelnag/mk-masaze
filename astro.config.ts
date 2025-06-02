@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import { fileURLToPath } from "url";
 import jpconfig from "./vendor/integration";
+import compress from "astro-compress"
 
 import icon from "astro-icon";
 
@@ -21,13 +22,25 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [
+    compress({
+      CSS: true,
+      HTML: {
+        "html-minifier-terser": {
+          removeAttributeQuotes: false,
+        },
+      },
+      Image: false,
+      JavaScript: true,
+      SVG: false,
+      Logger: 1,
+    }),
     jpconfig({
       config: "./src/config.yaml",
     }),
     icon({
       iconDir: "src/assets/icons",
       include: {
-        "material-symbols-light": ["*"]
+        "material-symbols-light": ["massage-outline", "clean-hands-outline", "water-drop-outline", "cleaning-bucket-outline", "avg-time-outline-rounded","map", "call", "mail", "calendar-clock-outline-rounded"]
       }
     }),
   ],
