@@ -1,8 +1,9 @@
 {
   "name": "mk-masaze-cz",
   // Update to today's date
-  "compatibility_date": "2025-06-01",
+  "compatibility_date": "2025-06-03",
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
+    "html_handling": "drop-trailing-slash"
   }
 }
