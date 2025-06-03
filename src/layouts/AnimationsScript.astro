@@ -1,0 +1,180 @@
+<script is:inline>
+  function initializeNavigation() {
+    const toggleButton = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('navbar-collapse-with-animation');
+    const openIcon = document.getElementById('menu-open-icon');
+    const closeIcon = document.getElementById('menu-close-icon');
+
+    if (toggleButton && mobileMenu && openIcon && closeIcon) {
+      // Remove any existing event listeners by cloning the button
+      const newToggleButton = toggleButton.cloneNode(true);
+      toggleButton.parentNode.replaceChild(newToggleButton, toggleButton);
+
+      // Set initial state for mobile
+      function setInitialState() {
+        if (window.innerWidth < 768) {
+          mobileMenu.style.maxHeight = '0';
+          mobileMenu.style.opacity = '0';
+        } else {
+          mobileMenu.style.maxHeight = 'none';
+          mobileMenu.style.opacity = '1';
+        }
+        newToggleButton.setAttribute('aria-expanded', 'false');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+
+      setInitialState();
+
+      newToggleButton.addEventListener('click', function() {
+        const isExpanded = newToggleButton.getAttribute('aria-expanded') === 'true';
+
+        if (isExpanded) {
+          // Close menu - slide up
+          mobileMenu.style.maxHeight = '0';
+          mobileMenu.style.opacity = '0';
+          openIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+          newToggleButton.setAttribute('aria-expanded', 'false');
+        } else {
+          // Open menu - slide down
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+          mobileMenu.style.opacity = '1';
+          openIcon.classList.add('hidden');
+          closeIcon.classList.remove('hidden');
+          newToggleButton.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      // Close menu when clicking on navigation links (mobile only)
+      const navLinks = mobileMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth < 768) { // Only on mobile
+            mobileMenu.style.maxHeight = '0';
+            mobileMenu.style.opacity = '0';
+            openIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+            newToggleButton.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+
+      // Handle window resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768) {
+          // Desktop: reset inline styles
+          mobileMenu.style.maxHeight = 'none';
+          mobileMenu.style.opacity = '1';
+          openIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+          newToggleButton.setAttribute('aria-expanded', 'false');
+        } else {
+          // Mobile: close menu if it was open
+          const isExpanded = newToggleButton.getAttribute('aria-expanded') === 'true';
+          if (!isExpanded) {
+            mobileMenu.style.maxHeight = '0';
+            mobileMenu.style.opacity = '0';
+          }
+        }
+      });
+    }
+  }
+
+  // Initialize on first load
+  document.addEventListener('DOMContentLoaded', initializeNavigation);
+
+  // Reinitialize after each Astro page transition
+  document.addEventListener('astro:page-load', initializeNavigation);
+
+  /* Inspired by: https://github.com/heidkaemper/tailwindcss-intersect */
+  const Observer = {
+    observer: null,
+    delayBetweenAnimations: 100,
+    animationCounter: 0,
+
+    start() {
+      const selectors = [
+        '[class*=" intersect:"]',
+        '[class*=":intersect:"]',
+        '[class^="intersect:"]',
+        '[class="intersect"]',
+        '[class*=" intersect "]',
+        '[class^="intersect "]',
+        '[class$=" intersect"]',
+      ];
+
+      const elements = Array.from(document.querySelectorAll(selectors.join(",")));
+
+      const getThreshold = (element) => {
+        if (element.classList.contains("intersect-full")) return 0.99;
+        if (element.classList.contains("intersect-half")) return 0.5;
+        if (element.classList.contains("intersect-quarter")) return 0.25;
+        return 0;
+      };
+
+      elements.forEach((el) => {
+        el.setAttribute("no-intersect", "");
+        el._intersectionThreshold = getThreshold(el);
+      });
+
+      const callback = (entries) => {
+        entries.forEach((entry) => {
+          requestAnimationFrame(() => {
+            const target = entry.target;
+            const intersectionRatio = entry.intersectionRatio;
+            const threshold = target._intersectionThreshold;
+
+            if (target.classList.contains("intersect-no-queue")) {
+              if (entry.isIntersecting) {
+                target.removeAttribute("no-intersect");
+                if (target.classList.contains("intersect-once")) {
+                  this.observer.unobserve(target);
+                }
+              } else {
+                target.setAttribute("no-intersect", "");
+              }
+              return;
+            }
+
+            if (intersectionRatio >= threshold) {
+              if (!target.hasAttribute("data-animated")) {
+                target.removeAttribute("no-intersect");
+                target.setAttribute("data-animated", "true");
+
+                const delay = this.animationCounter * this.delayBetweenAnimations;
+                this.animationCounter++;
+
+                target.style.transitionDelay = `${delay}ms`;
+                target.style.animationDelay = `${delay}ms`;
+
+                if (target.classList.contains("intersect-once")) {
+                  this.observer.unobserve(target);
+                }
+              }
+            } else {
+              target.setAttribute("no-intersect", "");
+              target.removeAttribute("data-animated");
+              target.style.transitionDelay = "";
+              target.style.animationDelay = "";
+
+              this.animationCounter = 0;
+            }
+          });
+        });
+      };
+
+      this.observer = new IntersectionObserver(callback.bind(this), { threshold: [0, 0.25, 0.5, 0.99] });
+
+      elements.forEach((el) => {
+        this.observer.observe(el);
+      });
+    },
+  };
+
+  Observer.start();
+
+  document.addEventListener("astro:after-swap", () => {
+    Observer.start();
+  });
+</script>

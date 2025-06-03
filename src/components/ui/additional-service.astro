@@ -1,6 +1,7 @@
 ---
 import type { Service } from "~/components/ui/massage.astro";
 import { getPermalink } from "../../utils/permalinks";
+import { animationClass } from "../../utils/utils";
 // Component for displaying additional service details
 interface Props {
   service: Service;
@@ -13,7 +14,7 @@ const { service } = Astro.props;
 <a
   href={getPermalink(`/masaze-kosmetika/${service.id}`)}>
   <div
-    class="group flex flex-col size-full bg-white hover:bg-gray-50 rounded-lg p-5 shadow-md hover:shadow-lg transition-all">
+    class={"group flex flex-col size-full bg-white hover:bg-gray-50 rounded-lg p-5 shadow-md hover:shadow-lg transition-all" + animationClass}>
     <div>
       <div>
         <h3 class="block font-bold text-text">{service.title}</h3>

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tailwindcss-intersect";
 
 /* Preline UI */
 @import "../../node_modules/preline/variants.css";
@@ -42,25 +43,38 @@ h1, h2, h3, h4, h5, h6 {
     --color-input: #e0dad0; /* Input border color */
     --color-ring: #7a9e7e; /* Focus ring color */
     /* Spacing Variables */
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 2rem;
-    --space-lg: 3rem;
-    --space-xl: 5rem;
 
-    /* Border Radius */
-    --radius-sm: 3px;
-    --radius-md: 6px;
-    --radius-lg: 12px;
     --radius-full: 9999px;
-
-    /* Transitions */
-    --transition-quick: 150ms ease;
-    --transition-default: 300ms ease;
-    --transition-slow: 500ms ease;
 
     /* Box Shadows */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* CSS rules for the page scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: var(--radius);
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--color-primary));
+    border-radius: var(--radius);
+}
+
+/* Firefox scrollbar styling */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--color-primary)) transparent;
 }

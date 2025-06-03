@@ -9,6 +9,10 @@ import Footer from "../components/ui/footer.astro";
 import '@fontsource-variable/montserrat';
 // Supports weights 100-700
 import '@fontsource-variable/josefin-sans';
+// Comment the line below to disable View Transitions
+import { ClientRouter } from "astro:transitions";
+import AnimationsScript from "./AnimationsScript.astro";
+
 
 
 export interface Props {
@@ -23,25 +27,13 @@ const { metadata = {} } = Astro.props;
   <head>
     <CommonMeta />
     <Metadata {...metadata} />
+    <!-- Comment the line below to disable View Transitions -->
+    <ClientRouter fallback="swap" />
   </head>
   <body class="antialiased text-foreground bg-background tracking-tight">
     <Navbar />
-      <slot />
+      <slot/>
     <Footer />
-
-    <script>
-      import "preline/preline.js";
-    </script>
-    <style>
-      /* CSS rules for the page scrollbar */
-      .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-      }
-
-      .scrollbar-hide {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-    </style>
+    <AnimationsScript/>
   </body>
 </html>

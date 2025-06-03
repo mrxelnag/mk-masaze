@@ -1,6 +1,7 @@
 ---
 import Image from "../Image.astro";
 import { getPermalink } from "../../utils/permalinks";
+import { animationClass } from "../../utils/utils";
 export interface Service {
   id: string;
   fav: boolean;
@@ -24,7 +25,7 @@ interface Props {
 
 const { massage } = Astro.props;
 ---
-<div class="flex group flex-col h-full bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+<div class={"flex group flex-col h-full bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg" + animationClass}>
   <a href={getPermalink(`/masaze-kosmetika/${massage.id}`)}>
     <div class="relative h-48 overflow-hidden group">
       <Image

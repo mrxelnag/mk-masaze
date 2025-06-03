@@ -2,6 +2,7 @@
 import { massageServices } from "../../masaze-kosmetika-data.js";
 import { getPermalink } from "../../utils/permalinks";
 import Massage from "../ui/massage.astro";
+import { animationClass } from "../../utils/utils";
 
 // Filter massage services to only include favorites
 const favoriteMassages = massageServices.filter(massage => massage.fav === true);
@@ -14,7 +15,7 @@ const favoriteMassages = massageServices.filter(massage => massage.fav === true)
      <Massage massage={massage}/>
     ))}
   </div>
-  <div class="flex justify-center mt-8">
+  <div class={"flex justify-center mt-8" + animationClass}>
     <a
       href={getPermalink("masaze-kosmetika")}
       class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-primary hover:bg-primary/90 rounded-lg transition-colors"

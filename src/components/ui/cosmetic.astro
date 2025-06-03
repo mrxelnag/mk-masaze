@@ -2,6 +2,7 @@
 import type { Service } from "~/components/ui/massage.astro";
 import { Icon } from "astro-icon/components";
 import { getPermalink } from "../../utils/permalinks";
+import { animationClass } from "../../utils/utils";
 // Component for displaying massage cosmetic details
 interface Props {
   cosmetic: Service;
@@ -15,7 +16,7 @@ const { cosmetic } = Astro.props;
 <a
   href={getPermalink(`/masaze-kosmetika/${cosmetic.id}`)}>
   <div
-    class="group flex gap-y-6 size-full bg-white hover:bg-gray-50 rounded-lg p-5 shadow-md hover:shadow-lg transition-all">
+    class={"group flex gap-y-6 size-full bg-white hover:bg-gray-50 rounded-lg p-5 shadow-md hover:shadow-lg transition-all" + animationClass}>
     {cosmetic.icon ? (
       <Icon
         name={cosmetic.icon}

@@ -4,6 +4,7 @@ import { Icon } from "astro-icon/components";
 import { getPermalink } from "../../utils/permalinks";
 import Massage from "../ui/massage.astro";
 import Cosmetic from "../ui/cosmetic.astro";
+import { animationClass } from "../../utils/utils";
 
 // Get only cosmetic services and filter favorites
 const favoriteCosmetics = cosmeticServices.filter(service => service.fav === true);
@@ -17,7 +18,7 @@ const favoriteCosmetics = cosmeticServices.filter(service => service.fav === tru
     ))}
   </div>
   <div class="px-4 py-10 mx-auto">
-    <div class="flex justify-center mt-8">
+    <div class={"flex justify-center mt-8" + animationClass}>
       <a
         href={getPermalink("masaze-kosmetika#kosmetika")}
         class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-primary hover:bg-primary/90 rounded-lg transition-colors"

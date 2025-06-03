@@ -26,13 +26,15 @@ import { SITE } from "jpconfig:config";
       <div class="ml-auto mr-5 md:hidden">
         <button
           type="button"
-          class="hs-collapse-toggle flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-neutral-600 transition duration-300 hover:bg-neutral-200 disabled:pointer-events-none disabled:opacity-50"
-          data-hs-collapse="#navbar-collapse-with-animation"
+          id="mobile-menu-toggle"
+          class="flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-neutral-600 transition duration-300 hover:bg-neutral-200 disabled:pointer-events-none disabled:opacity-50"
           aria-controls="navbar-collapse-with-animation"
           aria-label="Toggle navigation"
+          aria-expanded="false"
         >
           <svg
-            class="h-[1.25rem] w-[1.25rem] shrink-0 hs-collapse-open:hidden"
+            id="menu-open-icon"
+            class="h-[1.25rem] w-[1.25rem] shrink-0 transition-transform duration-300"
             width="24"
             height="24"
             viewBox="0 0 24 24"
@@ -47,7 +49,8 @@ import { SITE } from "jpconfig:config";
             <line x1="3" x2="21" y1="18" y2="18"></line>
           </svg>
           <svg
-            class="hidden h-[1.25rem] w-[1.25rem] shrink-0 hs-collapse-open:block"
+            id="menu-close-icon"
+            class="hidden h-[1.25rem] w-[1.25rem] shrink-0 transition-transform duration-300"
             width="24"
             height="24"
             viewBox="0 0 24 24"
@@ -66,13 +69,13 @@ import { SITE } from "jpconfig:config";
     <!-- Contains navigation links -->
     <div
       id="navbar-collapse-with-animation"
-      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 md:block"
+      class="grow basis-full overflow-hidden transition-all duration-500 ease-in-out md:block md:opacity-100 md:max-h-none"
+      style="max-height: 0; opacity: 0;"
     >
       <!-- Navigation links container -->
       <div
         class="mt-5 flex flex-col gap-x-0 gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-4 lg:gap-x-7 md:gap-y-0 md:ps-7"
       >
-
         <NavLink url={getPermalink("/", "home")} name="Domů" />
         <NavLink url={getPermalink("/masaze-kosmetika")} name="Masáže" />
         <NavLink url={getPermalink("/masaze-kosmetika#kosmetika")} name="Kosmetika" />
@@ -84,3 +87,80 @@ import { SITE } from "jpconfig:config";
     </div>
   </nav>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('navbar-collapse-with-animation');
+    const openIcon = document.getElementById('menu-open-icon');
+    const closeIcon = document.getElementById('menu-close-icon');
+
+    if (toggleButton && mobileMenu && openIcon && closeIcon) {
+      // Set initial state for mobile
+      function setInitialState() {
+        if (window.innerWidth < 768) {
+          mobileMenu.style.maxHeight = '0';
+          mobileMenu.style.opacity = '0';
+        } else {
+          mobileMenu.style.maxHeight = 'none';
+          mobileMenu.style.opacity = '1';
+        }
+      }
+
+      setInitialState();
+
+      toggleButton.addEventListener('click', function() {
+        const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+
+        if (isExpanded) {
+          // Close menu - slide up
+          mobileMenu.style.maxHeight = '0';
+          mobileMenu.style.opacity = '0';
+          openIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+          toggleButton.setAttribute('aria-expanded', 'false');
+        } else {
+          // Open menu - slide down
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+          mobileMenu.style.opacity = '1';
+          openIcon.classList.add('hidden');
+          closeIcon.classList.remove('hidden');
+          toggleButton.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      // Close menu when clicking on navigation links (mobile only)
+      const navLinks = mobileMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth < 768) { // Only on mobile
+            mobileMenu.style.maxHeight = '0';
+            mobileMenu.style.opacity = '0';
+            openIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+            toggleButton.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+
+      // Handle window resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768) {
+          // Desktop: reset inline styles
+          mobileMenu.style.maxHeight = 'none';
+          mobileMenu.style.opacity = '1';
+          openIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+          toggleButton.setAttribute('aria-expanded', 'false');
+        } else {
+          // Mobile: close menu if it was open
+          const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+          if (!isExpanded) {
+            mobileMenu.style.maxHeight = '0';
+            mobileMenu.style.opacity = '0';
+          }
+        }
+      });
+    }
+  });
+</script>
