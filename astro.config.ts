@@ -19,6 +19,15 @@ export default defineConfig({
         "~": path.resolve(__dirname, "./src"),
       },
     },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'client-router': ['@astrojs/router']
+          }
+        }
+      }
+    },
     plugins: [tailwindcss()],
   },
   integrations: [
