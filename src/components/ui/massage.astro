@@ -31,6 +31,7 @@ const { massage } = Astro.props;
       <Image
         src={massage.image}
         alt={massage.title}
+        loading={"lazy"}
         class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
       />
       <div class="absolute inset-0 bg-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
