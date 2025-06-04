@@ -1,7 +1,7 @@
 site:
   name: MK Masáže
   site: "https://mk-masaze.cz"
-  defaultPhone: "+420 123 456 789"
+  defaultPhone: "+420 704 317 592"
   base: "/"
   trailingSlash: false
   reservation: "https://masaze-kopecka.reservio.com"
@@ -14,8 +14,8 @@ metadata:
     template: "%s | MK Masáže & Kosmetika"
   description: "MK Masáže nabízí profesionální masážní služby pro relaxaci a regeneraci. Naše nabídka zahrnuje klasické, sportovní, relaxační a další druhy masáží. Přijďte si odpočinout a načerpat novou energii."
   robots:
-    index: false
-    follow: false
+    index: true
+    follow: true
   openGraph:
     site_name: MK Masáže
     images:
