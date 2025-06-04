@@ -4,8 +4,8 @@ site:
   defaultPhone: "+420 123 456 789"
   base: "/"
   trailingSlash: false
-#  reservation: "https://mk-masaze.reservio.cz"
-  reservation: "/"
+  reservation: "https://masaze-kopecka.reservio.com"
+
 
 # Default SEO metadata
 metadata:

@@ -51,9 +51,11 @@ const {
                     <span class="text-2xl font-bold text-primary">{item.price}</span>
                     <span class="text-muted-foreground ml-2">/ {item.duration}</span>
                   </div>
-                  <button class="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary transition-colors">
+                  <a
+                    href={item.reservioUrl}
+                    class="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary transition-colors">
                     Rezervovat
-                  </button>
+                  </a>
                 </div>
               ))}
             </div>
@@ -78,10 +80,12 @@ const {
                 <span class="text-3xl font-bold text-primary block">{item.price}</span>
                 <span class="text-slate-500 text-lg">/ {item.duration}</span>
               </div>
-              <button
+              <a
+                href={item.reservioUrl}
+
                 class="px-8 py-3 bg-primary text-white rounded-md hover:bg-primary transition-colors text-lg font-medium">
                 Rezervovat
-              </button>
+              </a>
             </div>
           ))}
         </div>
