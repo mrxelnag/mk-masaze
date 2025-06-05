@@ -5,6 +5,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import jpconfig from "./vendor/integration";
 import compress from "astro-compress"
+import sitemap from "@astrojs/sitemap";
 
 import icon from "astro-icon";
 
@@ -31,6 +32,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [
+    sitemap(),
     compress({
       CSS: true,
       HTML: {

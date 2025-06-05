@@ -12,12 +12,14 @@ export const massageServices = [
       {
         price: "800 Kč",
         duration: "60 minut",
-        reservioUrl: "https://masaze-kopecka.reservio.com/services/b746a9cc-2297-4625-a188-f54b8b6dca11",
+        reservioUrl:
+          "https://masaze-kopecka.reservio.com/booking?resourceId=b9f50acf-4da4-4815-8c18-8e64257df763&serviceId=b746a9cc-2297-4625-a188-f54b8b6dca11&step=2",
       },
       {
         price: "1250 Kč",
         duration: "90 minut",
-        reservioUrl: "https://masaze-kopecka.reservio.com/services/205f4445-ae77-42db-bb5f-ad9ae06ce712",
+        reservioUrl:
+          "https://masaze-kopecka.reservio.com/booking?resourceId=b9f50acf-4da4-4815-8c18-8e64257df763&serviceId=205f4445-ae77-42db-bb5f-ad9ae06ce712&step=2",
       },
     ],
     benefits: [
@@ -44,7 +46,8 @@ export const massageServices = [
       {
         price: "800 Kč",
         duration: "60 minut",
-            reservioUrl: "https://masaze-kopecka.reservio.com/services/b826bc41-c469-4344-b738-607a7fd5de64",
+        reservioUrl:
+          "https://masaze-kopecka.reservio.com/booking?resourceId=b9f50acf-4da4-4815-8c18-8e64257df763&serviceId=b826bc41-c469-4344-b738-607a7fd5de64&step=2",
       },
     ],
     benefits: [
@@ -74,7 +77,8 @@ export const massageServices = [
       {
         price: "800 Kč",
         duration: "60 minut",
-            reservioUrl: "https://masaze-kopecka.reservio.com/services/f71c17e9-9cfd-467c-981b-18f115c04d70",
+        reservioUrl:
+          "https://masaze-kopecka.reservio.com/booking?resourceId=b9f50acf-4da4-4815-8c18-8e64257df763&serviceId=f71c17e9-9cfd-467c-981b-18f115c04d70&step=2",
       },
     ],
     benefits: [
@@ -105,7 +109,8 @@ export const massageServices = [
       {
         price: "1500 Kč",
         duration: "90 min + 20 min",
-            reservioUrl: "https://masaze-kopecka.reservio.com/services/ed0df434-1b40-4fb6-8314-b8b3f48919a0",
+        reservioUrl:
+          "https://masaze-kopecka.reservio.com/booking?resourceId=b9f50acf-4da4-4815-8c18-8e64257df763&serviceId=ed0df434-1b40-4fb6-8314-b8b3f48919a0&step=2",
       },
     ],
     benefits: [
@@ -134,7 +139,8 @@ export const massageServices = [
       {
         price: "1200 Kč",
         duration: "90 minut",
-            reservioUrl: "https://masaze-kopecka.reservio.com/services/2bee50fe-b8e5-497a-8b53-9bc6597b58f7",
+        reservioUrl:
+          "https://masaze-kopecka.reservio.com/booking?resourceId=b9f50acf-4da4-4815-8c18-8e64257df763&serviceId=2bee50fe-b8e5-497a-8b53-9bc6597b58f7&step=2",
       },
     ],
     benefits: [
@@ -162,7 +168,8 @@ export const massageServices = [
       {
         price: "1500 Kč",
         duration: "120 minut",
-            reservioUrl: "https://masaze-kopecka.reservio.com/services/90993274-a246-4911-939e-161065b6317f",
+        reservioUrl:
+          "https://masaze-kopecka.reservio.com/booking?resourceId=b9f50acf-4da4-4815-8c18-8e64257df763&serviceId=90993274-a246-4911-939e-161065b6317f&step=2",
       },
     ],
     benefits: [
@@ -191,7 +198,8 @@ export const massageServices = [
       {
         price: "1500 Kč",
         duration: "120 minut",
-            reservioUrl: "https://masaze-kopecka.reservio.com/services/522bdccb-fb81-4b4a-afc3-24fb17e99ae4",
+        reservioUrl:
+          "https://masaze-kopecka.reservio.com/booking?resourceId=b9f50acf-4da4-4815-8c18-8e64257df763&serviceId=522bdccb-fb81-4b4a-afc3-24fb17e99ae4&step=2",
       },
     ],
     benefits: [
@@ -223,7 +231,8 @@ export const cosmeticServices = [
       {
         price: "1200 Kč",
         duration: "60 minut",
-            reservioUrl: "https://masaze-kopecka.reservio.com/services/c83344ff-2495-45c7-b83b-789c01c71c9e",
+        reservioUrl:
+          "https://masaze-kopecka.reservio.com/booking?resourceId=b9f50acf-4da4-4815-8c18-8e64257df763&serviceId=c83344ff-2495-45c7-b83b-789c01c71c9e&step=2",
       },
     ],
     benefits: ["Hloubkové čištění pleti", "Hydratace pokožky", "Vyživení pleti", "Přizpůsobení typu pleti"],
@@ -244,15 +253,11 @@ export const cosmeticServices = [
       {
         price: "1800 Kč",
         duration: "90 minut",
-            reservioUrl: "https://masaze-kopecka.reservio.com/services/c1e858f8-6b7a-492d-ae64-99782518bb59",
+        reservioUrl:
+          "https://masaze-kopecka.reservio.com/booking?resourceId=b9f50acf-4da4-4815-8c18-8e64257df763&serviceId=c1e858f8-6b7a-492d-ae64-99782518bb59&step=2",
       },
     ],
-    benefits: [
-      "Péče o vrásky",
-      "Ošetření akné",
-      "Redukce pigmentových skvrn",
-      "Hydratace a rozjasnění",
-    ],
+    benefits: ["Péče o vrásky", "Ošetření akné", "Redukce pigmentových skvrn", "Hydratace a rozjasnění"],
     longDescription: `
       Kosmetické ošetření přizpůsobené konkrétním potřebám vaší pleti. Zaměřujeme se 
       na specifické problémy jako jsou vrásky, akné, pigmentové skvrny nebo potřebu 
@@ -271,7 +276,8 @@ export const cosmeticServices = [
       {
         price: "1800 Kč",
         duration: "90 minut",
-            reservioUrl: "https://masaze-kopecka.reservio.com/services/08b56f40-8c2e-4c80-9dcd-012c7ade561e",
+        reservioUrl:
+          "https://masaze-kopecka.reservio.com/booking?resourceId=b9f50acf-4da4-4815-8c18-8e64257df763&serviceId=08b56f40-8c2e-4c80-9dcd-012c7ade561e&step=2",
       },
     ],
     benefits: [
@@ -299,7 +305,8 @@ export const cosmeticServices = [
       {
         price: "1800 Kč",
         duration: "90 minut",
-            reservioUrl: "https://masaze-kopecka.reservio.com/services/079aca60-c777-4c1f-b49c-583f2e66d1ee",
+        reservioUrl:
+          "https://masaze-kopecka.reservio.com/booking?resourceId=b9f50acf-4da4-4815-8c18-8e64257df763&serviceId=079aca60-c777-4c1f-b49c-583f2e66d1ee&step=2",
       },
     ],
     benefits: [
@@ -327,7 +334,8 @@ export const cosmeticServices = [
       {
         price: "3700 Kč",
         duration: "90 minut",
-            reservioUrl: "https://masaze-kopecka.reservio.com/services/06dc6af3-b03f-4f13-b142-cc06de6d1f7c",
+        reservioUrl:
+          "https://masaze-kopecka.reservio.com/booking?resourceId=b9f50acf-4da4-4815-8c18-8e64257df763&serviceId=06dc6af3-b03f-4f13-b142-cc06de6d1f7c&step=2",
       },
     ],
     benefits: [
@@ -359,12 +367,14 @@ export const additionalServices = [
       {
         price: "350 Kč",
         duration: "samostatně",
-            reservioUrl: "https://masaze-kopecka.reservio.com/services/950bcf12-027a-4823-9abb-392fadfb78ce",
+        reservioUrl:
+          "https://masaze-kopecka.reservio.com/booking?resourceId=b9f50acf-4da4-4815-8c18-8e64257df763&serviceId=950bcf12-027a-4823-9abb-392fadfb78ce&step=2",
       },
       {
         price: "230 Kč",
         duration: "k ošetření pleti",
-        reservioUrl: "https://masaze-kopecka.reservio.com/services/950bcf12-027a-4823-9abb-392fadfb78ce",
+        reservioUrl:
+          "https://masaze-kopecka.reservio.com/booking?resourceId=b9f50acf-4da4-4815-8c18-8e64257df763&serviceId=950bcf12-027a-4823-9abb-392fadfb78ce&step=2",
       },
     ],
     benefits: ["Zvýraznění pohledu", "Dlouhodobý efekt", "Úspora času při líčení", "Přirozený vzhled"],
@@ -383,12 +393,14 @@ export const additionalServices = [
       {
         price: "450 Kč",
         duration: "laminace",
-        reservioUrl: "https://masaze-kopecka.reservio.com/services/950bcf12-027a-4823-9abb-392fadfb78ce",
+        reservioUrl:
+          "https://masaze-kopecka.reservio.com/booking?resourceId=b9f50acf-4da4-4815-8c18-8e64257df763&serviceId=950bcf12-027a-4823-9abb-392fadfb78ce&step=2",
       },
       {
         price: "300 Kč",
         duration: "ke kosmetice",
-        reservioUrl: "https://masaze-kopecka.reservio.com/services/950bcf12-027a-4823-9abb-392fadfb78ce",
+        reservioUrl:
+          "https://masaze-kopecka.reservio.com/booking?resourceId=b9f50acf-4da4-4815-8c18-8e64257df763&serviceId=950bcf12-027a-4823-9abb-392fadfb78ce&step=2",
       },
     ],
     benefits: ["Tvarování řas a obočí", "Dlouhodobý efekt", "Přirozený vzhled", "Zlepšení struktury chloupků"],
